@@ -1,0 +1,17 @@
+service: terraform-workshop-thePublisher
+
+provider:
+  name: azure
+  location: North Europe
+
+plugins:
+  - serverless-azure-functions
+
+functions:
+  publish:
+    handler: handler.publish
+    events:
+      - timer:
+        x-azure-settings:
+            name: timerObj #<string>, default - "myTimer", specifies which name it's available on `context.bindings`
+            schedule: 0 */1 * * * * #<string>, cron expression to run on

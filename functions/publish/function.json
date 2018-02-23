@@ -1,0 +1,12 @@
+{
+    "disabled": false,
+    "bindings": [
+        {
+            "type": "timerTrigger",
+            "direction": "in",
+            "name": "timerObj",
+            "schedule": "0 */1 * * * *"
+        }
+    ],
+    "entryPoint": "publish"
+}
